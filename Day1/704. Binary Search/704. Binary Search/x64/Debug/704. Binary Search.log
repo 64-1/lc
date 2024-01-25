@@ -1,0 +1,3 @@
+﻿  704. Binary Search.cpp
+D:\Practice\704. Binary Search\704. Binary Search\704. Binary Search.cpp(11,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  704. Binary Search.vcxproj -> D:\Practice\704. Binary Search\x64\Debug\704. Binary Search.exe
