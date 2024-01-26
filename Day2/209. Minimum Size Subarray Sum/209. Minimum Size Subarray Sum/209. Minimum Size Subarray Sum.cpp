@@ -5,26 +5,27 @@ using namespace std;
 
 class Solution {
 public:
-    int minSubArrayLen(int target, vector<int>& nums) {
-        int length = 0;
+    int minSubArrayLen(int target, vector<int>& nums)
+    {
+        int i = 0;
+        int result = INT_MAX;
         int sum = 0;
-        int i,j = 0;
-        for (int j = 0; j < nums.size(); ++j)
+        for (int j = 0; j < nums.size(); j++)
         {
-            for(int i = 0; i <= j; ++i)
-            { 
-                sum += nums[i];
-                ++length;
-                if (target <= sum)
-                {
-                    return length;
-                }
+            sum += nums[j];
+            while (sum >= target)
+            {
+                int length = j - i + 1;
+                result = min(result, length);
+                sum -= nums[i];
+                i++;
             }
-            cout << "sum = " << sum << endl;
-            sum = 0;
-            length = 0;
         }
-        return 0;
+        if (result == INT_MAX)
+        {
+            return 0;
+        }
+        return result;
     }
 };
 
