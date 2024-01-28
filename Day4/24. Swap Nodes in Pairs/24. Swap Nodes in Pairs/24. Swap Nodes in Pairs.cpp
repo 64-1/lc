@@ -35,21 +35,30 @@ class Solution {
 public:
     ListNode* swapPairs(ListNode* head) 
     {
+        if (head == nullptr || head->next == nullptr)
+        {
+            return head;
+        }
+
         ListNode* dummyHead = new ListNode();
-        ListNode* current = new ListNode();
-        dummyHead = head;
-        current = dummyHead;
+        dummyHead->next = head;
+        ListNode* current = dummyHead;
 
         while (current->next != nullptr && current->next->next != nullptr)
         {
             ListNode* temp = current->next;
-            ListNode* temp1 = current->next->next->next;
+            ListNode* temp1 = current->next->next;
 
-            current = current->next->next;
-            current->next->next = temp;
-            temp->next = temp1;
+            //current = current->next->next;
+            //current->next->next = temp;
+            //temp->next = temp1;
 
-            current = current->next->next;
+            //current = current->next->next;
+            temp->next = temp1->next;
+            temp1->next = temp;
+            current->next = temp1;
+
+            current = temp;
         }
 
         return dummyHead->next;
@@ -58,16 +67,27 @@ public:
 
 int main()
 {
-    ListNode* input = new ListNode(4);
-    std::vector<int> realInput = { 3,2,1 };
-    for (int i= 0; i < realInput.size(); ++i)
+    // Initialize the linked list
+    std::vector<int> realInput = { 4,3,2,1 };
+    ListNode* input = nullptr;
+    for (const auto& val : realInput)
     {
-        input = addHead(input, realInput[i]);
+        input = addHead(input, val);
     }
     print(input);
-    
-    Solution sol;
-    input = sol.swapPairs(input);
 
+    // Swap pairs
+    input = Solution().swapPairs(input);
+
+    // Print the result
     print(input);
+
+    // Delete the linked list to free memory
+    while (input != nullptr) {
+        ListNode* nextNode = input->next;
+        delete input;
+        input = nextNode;
+    }
+
+    return 0;
 }
