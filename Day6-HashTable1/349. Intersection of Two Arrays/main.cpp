@@ -4,8 +4,18 @@
 
 using namespace std;
 
+/**
+ * @class Solution
+ * @brief Class that calculates the intersection of two arrays.
+ */
 class Solution {
 public:
+    /**
+     * @brief Calculates the intersection of two arrays.
+     * @param nums1 The first array.
+     * @param nums2 The second array.
+     * @return The intersection of the two arrays.
+     */
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) 
     {
         unordered_set<int> s1(nums1.begin(), nums1.end());
