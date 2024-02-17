@@ -1,6 +1,18 @@
 {
     "files.associations": {
         "vector": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "queue": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "stack": "cpp",
+        "xhash": "cpp",
+        "xlocinfo": "cpp",
+        "xstring": "cpp",
+        "ios": "cpp",
+        "xiosbase": "cpp"
     }
 }
