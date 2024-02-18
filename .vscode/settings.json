@@ -13,6 +13,7 @@
         "xlocinfo": "cpp",
         "xstring": "cpp",
         "ios": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "thread": "cpp"
     }
 }
