@@ -14,6 +14,8 @@
         "xstring": "cpp",
         "ios": "cpp",
         "xiosbase": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "string": "cpp",
+        "iterator": "cpp"
     }
 }
