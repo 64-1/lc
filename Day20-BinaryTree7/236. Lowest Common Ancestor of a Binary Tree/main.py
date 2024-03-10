@@ -14,9 +14,10 @@ class Solution:
             return root
         if(left != None and right == None):
             return left
-        if(left == None and right != None):
+        elif(left == None and right != None):
             return right
-        return None
+        else:
+            return None
     
 def main():
     root = TreeNode(3)
