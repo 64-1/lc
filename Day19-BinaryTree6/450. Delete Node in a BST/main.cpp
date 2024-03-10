@@ -46,6 +46,13 @@ public:
         }
         return node;
     }
+    TreeNode* successor(TreeNode* root){
+        root = root->right;
+        while(root->left != nullptr){
+            root = root->left;
+        }
+        return root;
+    }
     
 };
 
